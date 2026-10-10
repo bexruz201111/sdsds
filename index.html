@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Помогаем быть первыми</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              green: '#4CD97B',
+              greenHover: '#3eb867',
+              darkBg: '#0b1320',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .hero-clip {
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 70px), 0 100%);
+    }
+    @media (min-width: 768px) {
+      .hero-clip {
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 90px), 0 100%);
+      }
+    }
+    
+    .glow-effect {
+      box-shadow: 0 0 25px rgba(76, 217, 123, 0.4);
+    }
+
+    .glass-nav {
+      background: rgba(11, 19, 32, 0.65);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 font-sans text-white antialiased overflow-x-hidden">
+
+  <section class="relative min-h-screen w-full flex flex-col justify-between hero-clip bg-brand-darkBg overflow-hidden select-none">
+    
+    <div class="absolute inset-0 z-0">
+      <!-- High dynamic race car pit stop background image -->
+      <img 
+        src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=2000&auto=format&fit=crop" 
+        alt="Pit Stop Race Car" 
+        class="w-full h-full object-cover object-center scale-105 transform filter brightness-75 contrast-110"
+        onerror="this.src='https://placehold.co/1920x1080/0f172a/ffffff?text=F1+Pitstop+Background'"
+      />
+      <!-- Gradient Overlays for readable text & visual depth -->
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/75 to-slate-900/40"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-transparent to-slate-950/90"></div>
+    </div>
+
+    <header class="relative z-20 w-full glass-nav border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-full border-2 border-brand-green flex items-center justify-center p-1.5 transition-transform group-hover:rotate-45 duration-300">
+            <svg class="w-full h-full text-brand-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+          <div class="relative group cursor-pointer py-2">
+            <button class="flex items-center gap-1.5 text-white group-hover:text-brand-green transition-colors">
+              <span>Услуги</span>
+              <svg class="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <!-- Dropdown Menu -->
+            <div class="absolute left-0 mt-2 w-48 bg-slate-900/95 backdrop-blur-md rounded-xl border border-white/10 shadow-2xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <a href="#" class="block px-4 py-2 text-xs text-gray-300 hover:text-white hover:bg-brand-green/20">Пассажирские перевозки</a>
+              <a href="#" class="block px-4 py-2 text-xs text-gray-300 hover:text-white hover:bg-brand-green/20">Грузовые перевозки</a>
+              <a href="#" class="block px-4 py-2 text-xs text-gray-300 hover:text-white hover:bg-brand-green/20">Аналитика процессов</a>
+            </div>
+          </div>
+
+          <a href="#" class="text-white hover:text-brand-green transition-colors">О компании</a>
+          <a href="#" class="text-white hover:text-brand-green transition-colors">Блог</a>
+          <a href="#" class="text-white hover:text-brand-green transition-colors">Контакты</a>
+        </nav>
+
+        <!-- Right Header Actions -->
+        <div class="flex items-center gap-4 sm:gap-6">
+          <!-- Search Icon Button -->
+          <button class="text-white/80 hover:text-brand-green transition-colors p-1.5 rounded-full hover:bg-white/5" aria-label="Поиск">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </button>
+
+          <!-- Language Switcher -->
+          <div class="bg-white/10 hover:bg-white/20 transition-colors px-2.5 py-1 rounded-md text-xs font-bold tracking-wider cursor-pointer border border-white/10">
+            RU
+          </div>
+
+          <!-- Phone Link -->
+          <a href="tel:+79000000000" class="hidden sm:flex items-center gap-2 text-sm font-semibold text-white hover:text-brand-green transition-colors">
+            <span class="p-1 rounded-md bg-brand-green/20 text-brand-green">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+            </span>
+            <span>+7 (900) 000-00-00</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 my-auto w-full">
+      <div class="max-w-2xl space-y-6">
+        
+        <!-- Main Heading -->
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-none uppercase">
+          Помогаем <br />
+          <span class="text-brand-green drop-shadow-[0_0_15px_rgba(76,217,123,0.3)]">
+            быть первыми
+          </span>
+        </h1>
+
+        <!-- Subtitle Description -->
+        <p class="text-base sm:text-lg text-gray-300 font-normal leading-relaxed max-w-xl">
+          Интегрированная система анализа бизнес процессов транспортных компаний различного профиля (пассажирские и грузовые перевозки)
+        </p>
+
+        <!-- CTA Button -->
+        <div class="pt-4">
+          <button 
+            onclick="document.getElementById('modal').classList.remove('hidden')"
+            class="bg-brand-green hover:bg-brand-greenHover text-slate-950 font-extrabold text-xs sm:text-sm px-8 py-4 rounded-full uppercase tracking-widest transition-all transform hover:-translate-y-1 glow-effect active:translate-y-0"
+          >
+            Отправить заявку
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-end pb-12 sm:pb-16">
+      <a 
+        href="#next" 
+        class="w-16 h-16 sm:w-20 sm:h-20 bg-brand-green hover:bg-brand-greenHover rounded-full flex items-center justify-center text-slate-950 transition-all transform hover:scale-110 active:scale-95 shadow-xl glow-effect"
+        aria-label="Прокрутить вниз"
+      >
+        <svg class="w-8 h-8 sm:w-10 sm:h-10 text-slate-950 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 14l-7 7-7-7" />
+        </svg>
+      </a>
+    </div>
+
+  </section>
+
+  <div id="modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <div class="bg-slate-900 border border-white/10 rounded-2xl p-6 sm:p-8 max-w-md w-full shadow-2xl relative">
+      <button 
+        onclick="document.getElementById('modal').classList.add('hidden')"
+        class="absolute top-4 right-4 text-gray-400 hover:text-white"
+      >
+        ✕
+      </button>
+      <h3 class="text-2xl font-bold text-white mb-2">Заявка на консультацию</h3>
+      <p class="text-sm text-gray-400 mb-6">Заполните форму, и мы свяжемся с вами в течение 15 минут.</p>
+      
+      <form onsubmit="event.preventDefault(); alert('Спасибо! Заявка отправлена.'); document.getElementById('modal').classList.add('hidden');" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold uppercase text-gray-300 mb-1">Ваше имя</label>
+          <input type="text" required placeholder="Иван Иванов" class="w-full bg-slate-800 border border-white/10 rounded-lg px-4 py-2.5 text-white placeholder-gray-500 focus:outline-none focus:border-brand-green text-sm">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold uppercase text-gray-300 mb-1">Телефон</label>
+          <input type="tel" required placeholder="+7 (900) 000-00-00" class="w-full bg-slate-800 border border-white/10 rounded-lg px-4 py-2.5 text-white placeholder-gray-500 focus:outline-none focus:border-brand-green text-sm">
+        </div>
+        <button type="submit" class="w-full bg-brand-green hover:bg-brand-greenHover text-slate-950 font-bold py-3 rounded-lg text-sm uppercase tracking-wider transition-colors mt-2">
+          Отправить
+        </button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
